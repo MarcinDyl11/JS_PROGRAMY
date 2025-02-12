@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz – Odczyt danych z JavaScript</title>
+</head>
+<body>
+    <h2>Dane</h2>
+    
+    <form id="myForm">
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię"><br><br>
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" placeholder="Wpisz swoje nazwisko"><br><br>
+        <label for="wiek">Wiek:</label>
+        <input type="text" id="wiek" name="wiek" placeholder="Wpisz swój wiek"><br><br>    
+        <button type="button" onclick="odczytajDane()">Wyświetl dane</button>
+    </form>
+    
+    <div id="wynik"></div>
+    
+    <script>
+        function odczytajDane() {
+            // Pobranie wartości wpisanych w pola formularza
+            var imie = document.getElementById("imie").value;
+            var nazwisko = document.getElementById("nazwisko").value;
+            var wiek = document.getElementById("wiek").value;
+
+            // Wyświetlenie danych w elemencie <div> o id "wynik"
+            var wynikDiv = document.getElementById("wynik");
+            wynikDiv.innerHTML = "<h3>Wprowadzone dane:</h3>" +
+ "<p>Imię: " + imie + "</p>" +
+ "<p>Nazwisko: " + nazwisko + "</p>" +
+ "<p>Wiek: " + wiek + "</p>";
+
+        }
+    </script>
+</body>
+</html>

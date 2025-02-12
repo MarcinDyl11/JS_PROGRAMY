@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    
+    <h2>Dane klasy</h2>
+    
+    <form>
+        <label for="klasa">Klasa:</label>
+        <input type="text" id="klasa" name="klasa" placeholder="Wpisz swoją klasę"><br><br>
+        <label for="rok">Rok:</label>
+        <input type="text" id="rok" name="rok" placeholder="Wpisz rok"><br><br>
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię"><br><br> 
+        <button type="button" onclick="odczytajDane()">Wyświetl dane</button>
+    </form>
+    <div id="wynik"></div>
+    
+    <script>
+        function odczytajDane() {
+            // Pobranie wartości wpisanych w pola formularza
+            var klasa = document.getElementById("klasa").value;
+            var rok = document.getElementById("rok").value;
+            var imie = document.getElementById("imie").value;
+
+            // Wyświetlenie danych w elemencie <div> o id "wynik"
+            var wynikDiv = document.getElementById("wynik");
+            wynikDiv.innerHTML = "<h3>Dane klasy:" + klasa + "</h3>" +
+ "<p>Rok: " + rok + "</p>" +
+ "<p>Uczniowie: " +  "</p>" +  
+ "<p>1. " + imie + "</p>";
+            }
+            </script>
+</body>
+</html>
