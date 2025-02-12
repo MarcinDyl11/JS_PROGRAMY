@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Dane</h2>
+    <form>
+       
+        <label for="name">Imie:</label>
+        <input type = 'text' id="Imie" name="Imie"><br>
+        <label for="Nazwisko">Nazwisko:</label>
+        <input type="text" id="Nazwisko" name="Nazwisko"><br>
+        <label for="wiek">Wiek:</label>
+        <input type="number" id="wiek" name="wiek"><br>
+        <input type="submit" onclick="getData()" value="Pobierz">
+    </form>
+    <p id="paragraf"></p>
+    <script>
+        function getData(){
+        const imie = document.getElementById("Imie").value;
+       // window.alert("Imie: " + imie);
+       document.getElementById("paragraf").innerHTML= text;
+        
+        }
+    </script>
+    
+</body>
+</html>
