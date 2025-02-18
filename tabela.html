@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <main>
+        <table id="liczby" style="color: red;">
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+       
+            </tr>
+        </table>
+    </main>
+    <div id="przycisk">
+    <button type="button" onclick="odczytajDane()">Sprawdź</button>
+    <script>
+        function odczytajDane() {
+            var tabel = document.getElementById("liczby");
+            var wynikDiv = document.getElementById("wynik");
+            var kolor = tabel.style.color;
+            wynikDiv.innerHTML = "<div>" + "<h3>Kolor tekstu: " + kolor + "</h3>";
+        }
+    </script>
+</body>
+</html>

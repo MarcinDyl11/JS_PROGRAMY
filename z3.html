@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dane klasy</title>
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
@@ -11,6 +11,8 @@
     <h2>Dane klasy</h2>
     
     <form>
+        <label for="opis">Opis:</label>
+        <input type="text" id="opis" name="opis" placeholder="Wpisz opis"><br><br>
         <label for="klasa">Klasa:</label>
         <input type="text" id="klasa" name="klasa" placeholder="Wpisz swoją klasę"><br><br>
         <label for="rok">Rok:</label>
@@ -23,18 +25,16 @@
     
     <script>
         function odczytajDane() {
-            // Pobranie wartości wpisanych w pola formularza
             var klasa = document.getElementById("klasa").value;
             var rok = document.getElementById("rok").value;
             var imie = document.getElementById("imie").value;
-
-            // Wyświetlenie danych w elemencie <div> o id "wynik"
+            var opis = document.getElementById("opis").value;
             var wynikDiv = document.getElementById("wynik");
-            wynikDiv.innerHTML = "<h3>Dane klasy:" + klasa + "</h3>" +
- "<p>Rok: " + rok + "</p>" +
- "<p>Uczniowie: " +  "</p>" +  
- "<p>1. " + imie + "</p>";
-            }
-            </script>
+            wynikDiv.innerHTML =  "<div>" + "<h3>Dane Klasy \"" + klasa + "\"</h3>" +
+                "<h3>Rok: " + rok + "</h3>" +
+                "<h3>Uczniowie: </h3><ol><li>" + imie + "</li></ol>" +
+                "<input type='text' id='opis' name='opis' placeholder='" + opis + "'><br><br></div>";
+        }
+    </script>
 </body>
 </html>

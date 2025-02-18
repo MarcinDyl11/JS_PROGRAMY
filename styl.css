@@ -1,6 +1,17 @@
-
+* {
+    padding: 5px;
+    margin: 5px;
+    font-style: italic;
+}
 #wynik {
     background-color: aqua;
     border: 1px solid black;
     padding:20px;
+    box-shadow: 5px 5px 5px 5px grey;
+    font-style: italic;
+    border-radius: 5px;
+    width: 20%;
+}
+h2 {
+    padding-left: 100px;
 }
