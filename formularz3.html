@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <form>
+        <label for="a">Liczba a:</label>
+        <input type="number" id="a" name="a" placeholder="Wpisz liczbę a"><br>
+        <label for="b">Liczba b::</label>
+        <input type="number" id="b" name="b" placeholder="Wpisz liczbę b"><br>
+        <select id="dzialanie" name="dzialanie">
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select>
+        <button type="button" onclick="oblicz()">Oblicz</button>
+        <p id="wynik"></p>
+    </form>
+    <script>
+        function oblicz() {
+          const a = document.getElementById("a").value;
+          const b = document.getElementById("b").value;
+          const dzialanie = document.getElementById("dzialanie").value;
+          const wynikDiv = document.getElementById("wynik");
+            let wynik;
+            if (dzialanie === "+") {
+                wynik = parseInt(a) + parseInt(b);
+            } else if (dzialanie === "-") {
+                wynik = parseInt(a) - parseInt(b);
+            }
+            wynikDiv.innerHTML = ` A = ${a}, B = ${b}<br> Operator = ${operator}<br> Wynik: ${wynik}`;
+        }
+    </script>
+</body>
+</html>

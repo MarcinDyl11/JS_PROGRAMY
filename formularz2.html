@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oowce</title>
+</head>
+<body>
+    <form>
+        <label for="fruit">Wybierz owoc</label>
+        <select id="fruit" name="fruit">
+            <option value="apple">Jabłko</option>
+            <option value="banana">Banan</option>
+            <option value="cherry">Wiśnia</option>
+            <option value="grapefruit">Grejpfrut</option>
+            <option value="kiwi">Kiwi</option>
+        </select>
+        <button type="button" onclick="showSelectedFruit()">Pokaż wybrany owoc</button>
+        <p id="result"></p>
+        </form>
+        <script>
+            function showSelectedFruit() {
+                const selectElement = document.getElementById("fruit").value;
+                const resultElement = document.getElementById("result");
+                resultElement.innerHTML = `Twój ulubiony owoc to: ` + selectElement;
+            }
+        </script>
+    </form>
+</body>
+</html>

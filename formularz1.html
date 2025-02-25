@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz i tabela </title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <main>
+    <h2>Dane</h2>
+    <form>
+        <label for="imie">Autor:</label>
+        <input type="text" id="autor" name="autor" placeholder="Wpisz autora"><br>
+        <label for="tytul">Tytuł:</label>
+        <input type="text" id="tytul" name="tytul" placeholder="Wpisz tytuł"><br>
+        <button type="button" onclick="odczytajDane()">Wypisz</button>
+        </nav>
+        
+    </form>
+    </main>
+    <div id="wynik"></div>
+    <script>
+        function odczytajDane() {
+          var autor = document.getElementById("autor").value;
+          var tytul = document.getElementById("tytul").value;
+          var wynikDiv = document.getElementById("wynik");
+          wynikDiv.innerHTML = `
+        <h3>Dane książki</h3>
+    <table border="1">
+        <tr>
+        <th>Autor</th>
+        <td>${autor}</td>
+        </tr>
+      <tr>
+        <th>Tytul</th>
+        <td>"${tytul}"</td>
+        </tr>
+      </table>`;
+    }
+    </script>
+</body>
+</html>
