@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Radio</title>
 </head>
 <body>
-    
+    <form id="myForm">
+        <h2>Wybierz swoją ulubioną porę roku</h2>
+        <input type="radio" id="spring" name="season" value="wiosna">
+        <label for="summer">Wiosna</label><br>
+        <input type="radio" id="summer" name="season" value="lato">
+        <label for="summer">Lato</label><br>
+        <input type="radio" id="autumn" name="season" value="jesień">
+        <label for="autumn">Jesień</label><br>
+        <input type="radio" id="winter" name="season" value="zima">
+        <label for="winter">Zima</label><br>
+        <button type="button" onclick="result()">Wyświetl</button>
     </form>
+    <p id="result"></p>
+    <script>
+        function result() {
+            const resultParagraph = document.getElementById('result');
+            const radios = document.getElementsByName('season');
+            let result = '';
+            if (radios[0].checked) {
+                result = 'Wybrałeś: ' + radios[0].value;
+            } else if (radios[1].checked) {
+                result = 'Wybrałeś: ' + radios[1].value;
+            } else if (radios[2].checked) {
+                result = 'Wybrałeś: ' + radios[2].value;
+            } else if (radios[3].checked) {
+                result = 'Wybrałeś: ' + radios[3].value;
+            } else {
+                result = 'Nie wybrałeś żadnej opcji';
+            }
+            resultParagraph.textContent = result;
+        }
+    </script>
+       
 </body>
 </html>

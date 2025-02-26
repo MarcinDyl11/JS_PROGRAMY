@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="a">Podaj liczbę a</label><br>
+        <input type="number" id="a" name="a" value="0">
+        <label for="b">Podaj liczbę b</label><br>
+        <input type="number" id="b" name="b" value="0">
+        <input type="radio" id="plus" name="operation" value="+">
+        <label for="plus">+</label><br>
+        <input type="radio" id="minus" name="operation" value="-">
+        <label for="minus">-</label><br>
+        <button type="button" onclick="result()">Oblicz</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        function result() {
+            const resultParagraph = document.getElementById('result');
+            const radios = document.getElementsByName('operation');
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            let result = '';
+            if (radios[0].checked) {
+                result = a + b;
+            } else if (radios[1].checked) {
+                result = a - b;
+            } else {
+                result = 'Nie wybrałeś żadnej opcji';
+            }
+            resultParagraph.textContent = result;
+        }
+    </script>
+       
+</body>
+</html>
+</body>
+</html>

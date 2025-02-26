@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" placeholder="Podaj imię">
+        <label for="Nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" placeholder="Podaj nazwisko">
+        <label for="wiek">Wiek:</label>
+        <input type="number" id="wiek" name="wiek" placeholder="Podaj wiek">
+        <p>Płeć</p>
+        <input type="radio" id="M" name="M" value="M">
+        <label for="minus">M</label>
+        <input type="radio" id="K" name="K" value="K">
+        <label for="plus">K</label><br>
+        <label for="klasa">Wybierz klasę</label>
+        <select id="klasa" name="klasa">
+            <option value="1">1aT</option>
+            <option value="2">2aT</option>
+            <option value="3">3aT</option>
+            <option value="4">4aT</option>
+            <option value="5">5aT</option>
+        </select><br>
+        <button type="button" onclick="wypisz()">Wypisz</button>
+        <p id="wynik"></p>
+        </form>
+</body>
+</html>
