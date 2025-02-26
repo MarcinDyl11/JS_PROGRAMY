@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator</title>
+    <title>Document</title>
 </head>
 <body>
     <form>
-        <label for="a">Liczba a:</label>
-        <input type="number" id="a" name="a" placeholder="Wpisz liczbę a"><br>
-        <label for="b">Liczba b::</label>
-        <input type="number" id="b" name="b" placeholder="Wpisz liczbę b"><br>
-        <select id="dzialanie" name="dzialanie">
-            <option value="+">+</option>
-            <option value="-">-</option>
-        </select>
-        <button type="button" onclick="oblicz()">Oblicz</button>
-        <p id="wynik"></p>
+        <table>
+            <tr>
+                <td><label for="imie">Imię</label></td>
+                <td><input type="text" id="imie" placeholder="Podaj imię"></td>
+            </tr>
+            <tr>
+                <td><label for="nazwisko">Nazwisko</label></td>
+                <td><input type="text" id="nazwisko" placeholder="Podaj nazwisko"></td>
+            </tr>
+            <tr>
+                <td><label for="wybierz">Wybierz</label></td>
+                <td>
+                    <select id="Wybierz" name="Wybierz">
+                        <option value="imie">Imię</option>
+                        <option value="nazwisko">Nazwisko</option>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="odczytajDane()">Wyświetl</button></td>
+            </tr>
+        </table>
+        <p id="result"></p>
     </form>
     <script>
-        function oblicz() {
-          const a = document.getElementById("a").value;
-          const b = document.getElementById("b").value;
-          const dzialanie = document.getElementById("dzialanie").value;
-          const wynikDiv = document.getElementById("wynik");
-            let wynik;
-            if (dzialanie === "+") {
-                wynik = parseInt(a) + parseInt(b);
-            } else if (dzialanie === "-") {
-                wynik = parseInt(a) - parseInt(b);
+        function odczytajDane() {
+            const imie = document.getElementById("imie").value;
+            const nazwisko = document.getElementById("nazwisko").value;
+            const wybierz = document.getElementById("Wybierz").value;
+            const resultElement = document.getElementById("result");
+
+            if (wybierz === "imie") {
+                resultElement.innerHTML = 'Imię: ' + imie;
+            } else if (wybierz === "nazwisko") {
+                resultElement.innerHTML = 'Nazwisko: ' + nazwisko;
             }
-            wynikDiv.innerHTML = ` A = ${a}, B = ${b}<br> Operator = ${operator}<br> Wynik: ${wynik}`;
         }
     </script>
 </body>
