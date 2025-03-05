@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Rejestracja na warsztaty</h2>
+    <form>
+        <label for="imie">Imię i nazwisko:</label>
+        <input type="text" id="imie" placeholder="Wpisz imię i nazwisko"><br><br>
+        <label for="email">Adres email:</label>
+        <input type="email" id="email" placeholder="Wpisz adres email"><br><br><br><br>
+
+        <label for="warsztaty">Czy uczestniczyłeś wcześniej w naszych warsztatach?</label><br><br>
+        <input type="radio" id="tak" name="warsztaty" value="tak">
+        <label for="tak">Tak</label><br>
+        <input type="radio" id="nie" name="warsztaty" value="nie">
+        <label for="nie">Nie</label><br><br><br>
+
+        <label for="zgody">Zgody:</label><br><br>
+        <input type="checkbox" id="daneosobowe" name="daneosobowe" value="daneosobowe" required>
+        <label for="daneosobowe">Wyrażam zgodę na przetwarzanie danych osobowych</label><br>
+        <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+        <label for="newsletter">Chcę otrzymywać newsletter</label><br><br><br>
+
+        <label for="rodzajwarsztatu">Wybierz rodzaj warsztatu:</label>
+        <select id="rodzajwarsztatu" name="rodzajwarsztatu">
+            <option value="webdevelopment">Web Development</option>
+            <option value="ba">Backend</option>
+            <option value="fr">Frontend</option>
+        </select><br><br>
+        <button type="button" onclick="odczytajDane()">Wyświetl dane</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function odczytajDane() {
+            const imie = document.getElementById('imie').value;
+            const email = document.getElementById('email').value;
+            const warsztatyElement = getElementById('warsztaty').value;
+            const warsztaty = warsztatyElement ? (warsztatyElement.value === 'tak' ? 'Tak' : 'Nie') : 'Nie wybrano';
+            const daneosobowe = document.getElementById('daneosobowe').checked;
+            const newsletter = document.getElementById('newsletter').checked ? 'Tak' : 'Nie';
+            const rodzajwarsztatu = document.getElementById('rodzajwarsztatu').value;
+
+            if (!daneosobowe) {
+                document.getElementById('result').innerHTML = '<p>Musisz wyrazić zgodę na przetwarzanie danych osobowych.</p>';
+                return;
+            }
+
+            const result = `
+                <p>Imię i nazwisko: ${imie}</p>
+                <p>Adres email: ${email}</p>
+                <p>Czy uczestniczyłeś wcześniej w naszych warsztatach: ${warsztaty}</p>
+                <p>Wyrażam zgodę na przetwarzanie danych osobowych: Tak</p>
+                <p>Chcę otrzymywać newsletter: ${newsletter}</p>
+                <p>Rodzaj warsztatu: ${rodzajwarsztatu}</p>
+            `;
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
